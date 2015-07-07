@@ -2,8 +2,16 @@ require "html/proofer"
 
 task :default => [:build]
 
+task :clean do
+	sh 'rm -rf ./_site'
+end
+
 task :build do
 	system("jekyll build")
+end
+
+task :rebuild => [:clean, :build] do
+
 end
 
 task :test do
@@ -15,7 +23,7 @@ task :test do
 	}).run
 end
 
-task :cibuild => [:build, :test] do
+task :cibuild => [:rebuild, :test] do
 	
 end
 
