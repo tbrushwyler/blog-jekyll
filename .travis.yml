@@ -6,9 +6,7 @@ install: gem install jekyll html-proofer
 script: rake cibuild
 
 branches:
-	only:
-	- gh-pages
+- gh-pages
 
 env:
-	global:
-		- NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+- NOKOGIRI_USE_SYSTEM_LIBRARIES=true
