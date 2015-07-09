@@ -5,8 +5,5 @@ rvm:
 install: gem install jekyll html-proofer
 script: rake cibuild
 
-branches:
-- gh-pages
-
 env:
 - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
