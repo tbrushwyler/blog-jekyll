@@ -2,7 +2,8 @@ language: ruby
 rvm:
 - 2.1
 
-# install: gem install jekyll html-proofer -v 2.3.0 execjs -v 2.2.2
+# before_install: gem intall jekyll html-proofer
+install: bundle install
 script: rake cibuild
 
 env:
