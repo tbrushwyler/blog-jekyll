@@ -13,6 +13,12 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
+ html,
+ body {
+    height: 100%;
+    margin: 0;
+ }
+
 body {
     font-family: $base-font-family;
     font-size: $base-font-size;
@@ -200,5 +206,27 @@ pre {
         path {
             fill: $grey-color;
         }
+    }
+}
+
+
+
+/**
+ * Sticky footer
+ */
+
+#page-wrapper {
+    border-collapse: collapse;
+    display: table;
+    height: 100%;
+    width: 100%;
+
+    #page-content {
+        display: table-row;
+        height: 100%;
+    }
+
+    footer {
+        display: table-row;
     }
 }

@@ -1,0 +1,34 @@
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.gutter-top {
+	margin-top: $gutter-size;
+}
+
+.gutter-bottom {
+	margin-bottom: $gutter-size;
+}
+
+.gutter-left {
+	margin-left: $gutter-size;
+}
+
+.gutter-right {
+	margin-right: $gutter-size;
+}
+
+.gutter {
+	@extend .gutter-top;
+	@extend .gutter-bottom;
+	@extend .gutter-left;
+	@extend .gutter-right;
+}
