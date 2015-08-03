@@ -16,6 +16,7 @@ script:
 - set -e
 - rake build
 - git checkout -b gh-pages
+- echo "outofdeadlock.io" > _site/CNAME
 - git add -f _site/
 - 'git commit -m "${COMMIT_MESSAGE}"'
 - git filter-branch -f --subdirectory-filter _site/
