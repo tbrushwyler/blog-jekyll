@@ -19,7 +19,7 @@ script:
 - git add -f _site/
 - 'git commit -m "${COMMIT_MESSAGE}"'
 - git filter-branch -f --subdirectory-filter _site/
-- git push -f git@github.com:tbrushwyler/outofdeadlock.git master:master
+- git push -f git@github.com:tbrushwyler/outofdeadlock.git gh-pages:gh-pages
 
 branches:
   only:
