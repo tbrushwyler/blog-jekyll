@@ -4,6 +4,11 @@ title:  "Sticky footer without flexbox (CSS-Only)"
 date:   2015-08-03 15:52:00
 author: "Taylor"
 permalink: "/sticky-footers-without-flexbox"
+tags:
+- HTML
+- CSS
+- SASS
+- layout
 ---
 
 ### The problem

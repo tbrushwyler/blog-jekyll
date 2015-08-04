@@ -14,3 +14,4 @@ github_username:  tbrushwyler
 # Build settings
 markdown: kramdown
 exclude: [vendor]
+paginate: 5

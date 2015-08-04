@@ -4,6 +4,11 @@ title:  "Deploying Jekyll site to Github Pages with Travis CI"
 date:   2015-08-03 16:30:00
 author: "Taylor"
 permalink: "/deploying-jekyll-to-gh-pages"
+tags:
+- Jekyll
+- Travis CI
+- continuous integration
+- tests
 ---
 
 ### The problem

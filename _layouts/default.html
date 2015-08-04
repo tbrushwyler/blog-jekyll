@@ -32,6 +32,21 @@
       ga('send', 'pageview');
 
     </script>
+    <script>
+      var trackOutboundLink = function(url) {
+        ga('send', 'pageview', { 'page': url });
+      };
+
+      var elements = document.querySelectorAll('[data-analytics-path]');
+      for (var i = 0; i < elements.length; i++) {
+        var el = elements[i];
+        var url = el.getAttribute('data-analytics-path');
+
+        el.addEventListener('click', function() {
+          trackOutboundLink(url);
+        });
+      }
+    </script>
   </body>
 
 </html>
