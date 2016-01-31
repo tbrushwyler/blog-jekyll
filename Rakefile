@@ -16,15 +16,16 @@ end
 
 task :test do
 	HTML::Proofer.new("./_site", {
-		:href_ignore => [
+		href_ignore: [
 			"#"
 		],
-		:disable_external => true
+		disable_external: true,
+		check_html: true
 	}).run
 end
 
 task :cibuild => [:rebuild, :test] do
-	
+
 end
 
 task :deploy => :build do
