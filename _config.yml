@@ -3,9 +3,7 @@ title: Out of Deadlock
 email: contact@outofdeadlock.io
 author: Taylor Brushwyler
 description: > # this means to ignore newlines until "baseurl:"
-  I run into a lot of problems. My hope for this site is that it can
-  become a useful resource made up of the solutions to the problems
-  I encounter.
+  
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://outofdeadlock.io" # the base hostname & protocol for your site
 twitter_username: tbrushwyler
