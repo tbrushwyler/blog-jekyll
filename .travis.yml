@@ -19,6 +19,7 @@ script:
 - echo "outofdeadlock.io" > _site/CNAME
 - git add -f _site/
 - 'git commit -m "${COMMIT_MESSAGE}"'
+- git stash
 - git filter-branch -f --subdirectory-filter _site/
 - git push -f git@github.com:tbrushwyler/outofdeadlock.git gh-pages:gh-pages
 
