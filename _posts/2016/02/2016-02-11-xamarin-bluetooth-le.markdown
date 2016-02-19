@@ -30,7 +30,7 @@ A device has a single GATT profile that makes up its interface. At the top level
 - __WritableAuxilliaries__: allows a client to write to the Characteristic User Description descriptor
 - __Broadcast__: allows this characteristic value to be placed in advertising packets
 
-There are reserved [services](https://developer.bluetooth.org/gatt/services/Pages/ServicesHome.aspx){:target="_blank"} and [characteristics](https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicsHome.aspx){:target="_blank"} for specific types of devices and information. For example, a [heart rate monitor](https://developer.bluetooth.org/gatt/services/Pages/ServiceViewer.aspx?u=org.bluetooth.service.heart_rate.xml){:target="_blank"} will always have a service with identifier 0x180D that has characteristics 0x2A37, 0x2A38, and 0x2A39. Before beginning development, be sure to fully document the full GATT profile for the device.
+There are reserved [services](https://developer.bluetooth.org/gatt/services/Pages/ServicesHome.aspx){:target="_blank"} and [characteristics](https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicsHome.aspx){:target="_blank"} for specific types of devices and information. For example, a [heart rate monitor](https://developer.bluetooth.org/gatt/services/Pages/ServiceViewer.aspx?u=org.bluetooth.service.heart_rate.xml){:target="_blank"} will always have a service with identifier 0x180D that has characteristics 0x2A37, 0x2A38, and 0x2A39. Before beginning development, be sure to fully document the GATT profile for the device.
 
 ### Bluetooth LE in iOS
 
@@ -47,9 +47,7 @@ The confusing part for me is the device discovery and connection. Callbacks ([Le
 
 Sharing code in a cross-platform app means that the implementation details for each platform need to be abstracted away. This gives us a blank canvas on which to build a new interface for BLE.
 
-For ease of re-use, I have created a nuget package ([Xamarin.BluetoothLE](https://www.nuget.org/packages/XamarinBluetoothLE){:target="_blank"}) with the iOS and Android Bluetooth LE implementation abstracted away. You can [view/contribute to the source on Github](https://github.com/tbrushwyler/Xamarin.BluetoothLE){:target="_blank"}. Because of its similarities to the physical elements it represents, the interface is modeled more after the iOS implementation of BLE. Using C# allows us to raise events that will be handled by your code. The relevant interfaces are listed below:
-
-// todo: use the XML doc to create the documentation
+For ease of re-use, I have created a nuget package ([Xamarin.BluetoothLE](https://www.nuget.org/packages/XamarinBluetoothLE){:target="_blank"}) with the iOS and Android Bluetooth LE implementation abstracted away. You can [view/contribute to the source on Github](https://github.com/tbrushwyler/Xamarin.BluetoothLE){:target="_blank"}. The framework is largely based on the [Monkey.Robotics project](https://github.com/xamarin/Monkey.Robotics){:target="_blank"}, but with some updates and changes. Because of the confusion introduced by the callbacks in Android, the framework is modeled more similarly to the iOS implementation of BLE. C# introduces the opportunity for raising events when important things happen. The relevant interfaces are listed below:
 
 #### IAdapter
 
@@ -110,3 +108,6 @@ __Methods__:
 __Events__:
 
 - ValueUpdated
+
+### Final Thoughts
+With the incredibly fast growth of the IoT world, Bluetooth (specifically BLE) is a valid option for communication with smart objects. My hope is that this cross-platform library will help app developers to be able to look past the nitty gritty details of BLE implementation and to instead focus on using this technology to create great things.
