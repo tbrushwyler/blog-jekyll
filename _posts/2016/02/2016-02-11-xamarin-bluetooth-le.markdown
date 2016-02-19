@@ -47,67 +47,14 @@ The confusing part for me is the device discovery and connection. Callbacks ([Le
 
 Sharing code in a cross-platform app means that the implementation details for each platform need to be abstracted away. This gives us a blank canvas on which to build a new interface for BLE.
 
-For ease of re-use, I have created a nuget package ([Xamarin.BluetoothLE](https://www.nuget.org/packages/XamarinBluetoothLE){:target="_blank"}) with the iOS and Android Bluetooth LE implementation abstracted away. You can [view/contribute to the source on Github](https://github.com/tbrushwyler/Xamarin.BluetoothLE){:target="_blank"}. The framework is largely based on the [Monkey.Robotics project](https://github.com/xamarin/Monkey.Robotics){:target="_blank"}, but with some updates and changes. Because of the confusion introduced by the callbacks in Android, the framework is modeled more similarly to the iOS implementation of BLE. C# introduces the opportunity for raising events when important things happen. The relevant interfaces are listed below:
+For ease of re-use, I have created a nuget package ([Xamarin.BluetoothLE](https://www.nuget.org/packages/XamarinBluetoothLE){:target="_blank"}) with the iOS and Android Bluetooth LE implementation abstracted away. You can [view/contribute to the source on Github](https://github.com/tbrushwyler/Xamarin.BluetoothLE){:target="_blank"}. The framework is largely based on the [Monkey.Robotics project](https://github.com/xamarin/Monkey.Robotics){:target="_blank"}, but with some updates and changes. Because of the confusion introduced by the callbacks in Android, the framework is modeled more similarly to the iOS implementation of BLE. C# introduces the opportunity for raising events when important things happen.
 
-#### IAdapter
-
-Used for device discovery and disconnection.
-
-__Methods__:
-
-- StartScanningForDevices()
-- StopScanningForDevices()
-- ConnectToDevice()
-- DisconnectDevice()
-
-__Events__:
-
-- DeviceDiscovered
-- DeviceConnected
-- DeviceDisconnected
-- DeviceFailedToConnect
-- ScanTimeoutElapsed
-
-#### IDevice
-
-Used for interacting with a device.
-
-__Methods__:
-
-- DiscoverServices()
-- Disconnect()
-- Write()
-
-__Events__:
-
-- ServiceDiscovered
-
-#### IService
-
-Used for interacting with a service.
-
-__Methods__:
-
-- DiscoverCharacteristics()
-
-__Events__:
-
-- CharacteristicDiscovered
-
-#### ICharacteristic
-
-Used for interacting with a characteristic.
-
-__Methods__:
-
-- StartUpdates()
-- StopUpdates()
-- Read()
-- Write()
-
-__Events__:
-
-- ValueUpdated
+The documentation for the Xamarin.BluetoothLE package can be found [here](https://github.com/tbrushwyler/Xamarin.BluetoothLE/wiki/N_BluetoothLE_Core).
 
 ### Final Thoughts
 With the incredibly fast growth of the IoT world, Bluetooth (specifically BLE) is a valid option for communication with smart objects. My hope is that this cross-platform library will help app developers to be able to look past the nitty gritty details of BLE implementation and to instead focus on using this technology to create great things.
+
+#### Xamarin.BluetoothLE links
+- [View the nuget package](https://www.nuget.org/packages/XamarinBluetoothLE)
+- [View the source code](https://github.com/tbrushwyler/Xamarin.BluetoothLE/)
+- [View the documentation](https://github.com/tbrushwyler/Xamarin.BluetoothLE/wiki/N_BluetoothLE_Core)
